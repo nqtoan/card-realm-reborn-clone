@@ -5,10 +5,10 @@ from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = config('SECRET_KEY', default='your-secret-key-here')
+SECRET_KEY = config('SECRET_KEY')
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bcf06697a5ef.ngrok-free.app', '*']
-DEBUG = True  # Temporarily enable for debugging
-ALLOWED_HOSTS = ['collectorshomebase.com', 'www.collectorshomebase.com', 'api.collectorshomebase.com', '*']
+DEBUG = False  # Temporarily enable for debugging
+ALLOWED_HOSTS = ["*"]
 
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -79,12 +79,7 @@ REST_FRAMEWORK = {
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:8000",
-    "http://localhost:8080",
-    "http://localhost:8081",
-    "https://collectorshomebase.com",
-    "https://www.collectorshomebase.com",
+    "https://card-realm-reborn-clone.vercel.app/",
 ]
 
 # "https://bcf06697a5ef.ngrok-free.app",
@@ -113,7 +108,7 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Media files (user uploaded content)
 MEDIA_URL = '/media/'
