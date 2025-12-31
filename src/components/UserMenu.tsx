@@ -13,6 +13,8 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { User, LogOut } from 'lucide-react';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+
 const UserMenu = () => {
   const { user, logout } = useAuth();
   const { t } = useTranslation();
@@ -38,7 +40,7 @@ const UserMenu = () => {
       return user.profile_picture;
     }
     // Otherwise, prepend the base URL
-    return `https://api.collectorshomebase.com${user.profile_picture}`;
+    return `${API_BASE_URL}${user.profile_picture}`;
   };
 
   return (

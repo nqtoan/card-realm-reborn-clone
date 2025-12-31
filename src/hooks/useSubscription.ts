@@ -4,6 +4,8 @@ import { useAuth } from '@/contexts/AuthContext';
 import { backendApi } from '@/services/api';
 import { toast } from 'sonner';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+
 interface Subscription {
   id: number;
   plan: string;
@@ -25,7 +27,7 @@ export const useSubscription = () => {
     }
 
     try {
-      const response = await fetch('https://api.collectorshomebase.com/api/subscription/', {
+      const response = await fetch(`${API_BASE_URL}/api/subscription/`, {
         headers: {
           'Authorization': `Token ${token}`,
         },

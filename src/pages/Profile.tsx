@@ -10,6 +10,8 @@ import { useToast } from '@/hooks/use-toast';
 import { useTranslation } from 'react-i18next';
 import { Camera, Loader2 } from 'lucide-react';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+
 const Profile = () => {
   const { user, token, updateUser } = useAuth();
   const { toast } = useToast();
@@ -24,7 +26,7 @@ const Profile = () => {
   });
   const [profileImage, setProfileImage] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(
-    user?.profile_picture ? `https://api.collectorshomebase.com${user.profile_picture}` : null
+    user?.profile_picture ? (user.profile_picture.startsWith('http') ? user.profile_picture : `${API_BASE_URL}${user.profile_picture}`) : null
   );
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -77,7 +79,7 @@ const Profile = () => {
       }
 
       console.log('Sending profile update request...');
-      const response = await fetch('http://localhost:8000/api/auth/profile/', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/profile/`, {
         method: 'PUT',
         headers: {
           'Authorization': `Token ${token}`
@@ -93,7 +95,7 @@ const Profile = () => {
         updateUser(userData);
         // Update the preview URL if a new image was uploaded
         if (userData.profile_picture) {
-          setPreviewUrl(`http://localhost:8000/${userData.profile_picture}`);
+          setPreviewUrl(userData.profile_picture.startsWith('http') ? userData.profile_picture : `${API_BASE_URL}${userData.profile_picture}`);
         }
         toast({
           title: t('common.update'),
@@ -133,7 +135,7 @@ const Profile = () => {
   // Refresh user data after update
   const refreshUserData = async () => {
     try {
-      const response = await fetch('https://api.collectorshomebase.com/api/auth/profile/', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/profile/`, {
         headers: {
           'Authorization': `Token ${token}`
         }
@@ -143,7 +145,7 @@ const Profile = () => {
         // Update the user context with the new data
         updateUser(userData);
         if (userData.profile_picture) {
-          setPreviewUrl(`https://api.collectorshomebase.com${userData.profile_picture}`);
+          setPreviewUrl(userData.profile_picture.startsWith('http') ? userData.profile_picture : `${API_BASE_URL}${userData.profile_picture}`);
         }
       }
     } catch (error) {

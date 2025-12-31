@@ -1,5 +1,5 @@
 // API service functions
-const API_BASE_URL = 'http://localhost:8000/api';
+const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/api`;
 const TCGDEX_API_BASE = 'https://api.tcgdex.net/v2'; // Base URL without language, will be appended
 
 // Language mapping for TCGdex API
