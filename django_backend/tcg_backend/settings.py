@@ -11,16 +11,6 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False  # Temporarily enable for debugging
 ALLOWED_HOSTS = ["card-realm-reborn-clone.onrender.com"]
 
-if os.environ.get("CREATE_SUPERUSER") == "1":
-    from django.contrib.auth import get_user_model
-    User = get_user_model()
-    if not User.objects.filter(email=os.environ.get("SUPERUSER_EMAIL")).exists():
-        User.objects.create_superuser(
-            email=os.environ.get("toan190@gmail.com"),
-            password=os.environ.get("FAdHCy8TDuE31u"),
-        )
-
-
 AUTH_USER_MODEL = 'accounts.User'
 
 INSTALLED_APPS = [
@@ -131,3 +121,12 @@ os.makedirs(MEDIA_ROOT, exist_ok=True)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FRONTEND_URL=config('FRONTEND_URL', default='http://localhost:8080')
+
+if os.environ.get("CREATE_SUPERUSER") == "1":
+    from django.contrib.auth import get_user_model
+    User = get_user_model()
+    if not User.objects.filter(email=os.environ.get("SUPERUSER_EMAIL")).exists():
+        User.objects.create_superuser(
+            email=os.environ.get("toan190@gmail.com"),
+            password=os.environ.get("FAdHCy8TDuE31u"),
+        )
