@@ -122,3 +122,12 @@ os.makedirs(MEDIA_ROOT, exist_ok=True)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FRONTEND_URL=config('FRONTEND_URL', default='http://localhost:8080')
+
+if os.environ.get("CREATE_SUPERUSER") == "1":
+    from django.contrib.auth import get_user_model
+    User = get_user_model()
+    if not User.objects.filter(email="admin@example.com").exists():
+        User.objects.create_superuser(
+            email="admin@example.com",
+            password="540db92b20cabe1c3f69994d241c4daa8cd1a16a!"
+        )
