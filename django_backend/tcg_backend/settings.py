@@ -79,7 +79,7 @@ REST_FRAMEWORK = {
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "https://card-realm-reborn-clone.vercel.app/",
+    "https://card-realm-reborn-clone.vercel.app",
 ]
 
 # "https://bcf06697a5ef.ngrok-free.app",
