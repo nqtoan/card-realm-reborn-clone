@@ -25,7 +25,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-md border-b-2 border-gray-200 sticky top-0 z-50">
+    <header className="bg-surface-primary shadow-md border-b-2 border-border-color-primary sticky top-0 z-50 backdrop-blur-sm bg-gray-glass-005">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -37,13 +37,13 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
-            <Link to="/dashboard" className="text-gray-700 hover:text-primary px-3 py-2 text-sm font-semibold transition-colors">
+            <Link to="/dashboard" className="text-text-primary hover:text-primary px-3 py-2 text-sm font-semibold transition-colors">
               {t('header.dashboard')}
             </Link>
-            <Link to="/sets" className="text-gray-700 hover:text-primary px-3 py-2 text-sm font-semibold transition-colors">
+            <Link to="/sets" className="text-text-primary hover:text-primary px-3 py-2 text-sm font-semibold transition-colors">
               {t('header.sets')}
             </Link>
-            <Link to="/cards" className="text-gray-700 hover:text-primary px-3 py-2 text-sm font-semibold transition-colors">
+            <Link to="/cards" className="text-text-primary hover:text-primary px-3 py-2 text-sm font-semibold transition-colors">
               {t('header.cards')}
             </Link>
             <Link to="/dashboard/premium" className="text-yellow-600 hover:text-yellow-700 px-3 py-2 text-sm font-bold transition-colors">

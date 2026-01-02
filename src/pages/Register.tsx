@@ -56,10 +56,10 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-surface-primary py-12 px-4 sm:px-6 lg:px-8">
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-gray-900">{t('auth.register')}</CardTitle>
+          <CardTitle className="text-3xl font-bold text-text-primary">{t('auth.register')}</CardTitle>
           <CardDescription className="text-base">
             {t('auth.register')}
           </CardDescription>
@@ -68,7 +68,7 @@ const Register = () => {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Label htmlFor="first_name" className="text-gray-900 font-semibold">{t('profile.firstName')}</Label>
+                <Label htmlFor="first_name" className="text-text-primary font-semibold">{t('profile.firstName')}</Label>
                 <Input
                   id="first_name"
                   name="first_name"
@@ -81,7 +81,7 @@ const Register = () => {
                 />
               </div>
               <div>
-                <Label htmlFor="last_name" className="text-gray-900 font-semibold">{t('profile.lastName')}</Label>
+                <Label htmlFor="last_name" className="text-text-primary font-semibold">{t('profile.lastName')}</Label>
                 <Input
                   id="last_name"
                   name="last_name"
@@ -95,7 +95,7 @@ const Register = () => {
               </div>
             </div>
             <div>
-              <Label htmlFor="email" className="text-gray-900 font-semibold">{t('auth.email')}</Label>
+              <Label htmlFor="email" className="text-text-primary font-semibold">{t('auth.email')}</Label>
               <Input
                 id="email"
                 name="email"
@@ -108,7 +108,7 @@ const Register = () => {
               />
             </div>
             <div>
-              <Label htmlFor="password" className="text-gray-900 font-semibold">{t('auth.password')}</Label>
+              <Label htmlFor="password" className="text-text-primary font-semibold">{t('auth.password')}</Label>
               <Input
                 id="password"
                 name="password"
@@ -121,7 +121,7 @@ const Register = () => {
               />
             </div>
             <div>
-              <Label htmlFor="confirmPassword" className="text-gray-900 font-semibold">{t('auth.confirmPassword')}</Label>
+              <Label htmlFor="confirmPassword" className="text-text-primary font-semibold">{t('auth.confirmPassword')}</Label>
               <Input
                 id="confirmPassword"
                 name="confirmPassword"
@@ -138,7 +138,7 @@ const Register = () => {
             </Button>
           </form>
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-700 font-medium">
+            <p className="text-sm text-text-secondary font-medium">
               {t('auth.alreadyHaveAccount')}{' '}
               <Link to="/login" className="text-primary hover:text-primary/80 font-semibold transition-colors">
                 {t('auth.login')}

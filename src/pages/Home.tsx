@@ -11,15 +11,15 @@ const Home = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-surface-primary">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-primary/10 to-white overflow-hidden">
+      <section className="relative py-20 px-4 bg-gradient-to-b from-primary/10 to-surface-primary overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-text-primary mb-6">
             {t('home.heroTitle')}
             <span className="text-primary block">{t('home.heroSubtitle')}</span>
           </h1>
-          <p className="text-xl text-gray-700 mb-10 max-w-3xl mx-auto font-medium">
+          <p className="text-xl text-text-secondary mb-10 max-w-3xl mx-auto font-medium">
             {t('home.heroDescription')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -48,55 +48,55 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-surface-primary">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+          <h2 className="text-4xl font-bold text-center text-text-primary mb-16">
             {t('home.featuresTitle')}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="bg-surface-secondary hover:shadow-neumorphic transition-all duration-300 rounded-xl">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-2xl">
+                <CardTitle className="flex items-center gap-3 text-text-primary">
+                  <div className="w-12 h-12 bg-accent-glass-010 rounded-xl flex items-center justify-center text-2xl">
                     📊
                   </div>
                   {t('home.trackCollectionTitle')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base">
+                <CardDescription className="text-base text-text-secondary">
                   {t('home.trackCollectionDesc')}
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="bg-surface-secondary hover:shadow-neumorphic transition-all duration-300 rounded-xl">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-2xl">
+                <CardTitle className="flex items-center gap-3 text-text-primary">
+                  <div className="w-12 h-12 bg-accent-glass-010 rounded-xl flex items-center justify-center text-2xl">
                     🎯
                   </div>
                   {t('home.wishlistTitle')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base">
+                <CardDescription className="text-base text-text-secondary">
                   {t('home.wishlistDesc')}
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="bg-surface-secondary hover:shadow-neumorphic transition-all duration-300 rounded-xl">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-2xl">
+                <CardTitle className="flex items-center gap-3 text-text-primary">
+                  <div className="w-12 h-12 bg-accent-glass-010 rounded-xl flex items-center justify-center text-2xl">
                     🔍
                   </div>
                   {t('home.databaseTitle')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base">
+                <CardDescription className="text-base text-text-secondary">
                   {t('home.databaseDesc')}
                 </CardDescription>
               </CardContent>

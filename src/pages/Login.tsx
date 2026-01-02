@@ -40,10 +40,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-surface-primary py-12 px-4 sm:px-6 lg:px-8">
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-gray-900">{t('auth.login')}</CardTitle>
+          <CardTitle className="text-3xl font-bold text-text-primary">{t('auth.login')}</CardTitle>
           <CardDescription className="text-base">
             {t('auth.email')} and {t('auth.password').toLowerCase()}
           </CardDescription>
@@ -51,7 +51,7 @@ const Login = () => {
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <Label htmlFor="email" className="text-gray-900 font-semibold">{t('auth.email')}</Label>
+              <Label htmlFor="email" className="text-text-primary font-semibold">{t('auth.email')}</Label>
               <Input
                 id="email"
                 type="email"
@@ -63,7 +63,7 @@ const Login = () => {
               />
             </div>
             <div>
-              <Label htmlFor="password" className="text-gray-900 font-semibold">{t('auth.password')}</Label>
+              <Label htmlFor="password" className="text-text-primary font-semibold">{t('auth.password')}</Label>
               <Input
                 id="password"
                 type="password"
@@ -83,7 +83,7 @@ const Login = () => {
             </Button>
           </form>
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-700 font-medium">
+            <p className="text-sm text-text-secondary font-medium">
               {t('auth.dontHaveAccount')}{' '}
               <Link to="/register" className="text-primary hover:text-primary/80 font-semibold transition-colors">
                 {t('auth.register')}

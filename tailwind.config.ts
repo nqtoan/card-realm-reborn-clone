@@ -20,7 +20,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Montserrat', 'sans-serif'],
+				sans: ['Inter', 'DM Sans', 'Montserrat', 'sans-serif'],
+				inter: ['Inter', 'sans-serif'],
+				'dm-sans': ['DM Sans', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -115,11 +118,44 @@ export default {
 					dragon: '#096dc4',
 					steel: '#5a8ea2',
 				},
+				// Cookie.fun design system colors
+				'surface': {
+					primary: 'hsl(var(--color-surface-primary))',
+					secondary: 'hsl(var(--color-surface-secondary))',
+					tertiary: 'hsl(var(--color-surface-tertiary))',
+				},
+				'text': {
+					primary: 'hsl(var(--color-text-primary))',
+					secondary: 'hsl(var(--color-text-secondary))',
+					tertiary: 'hsl(var(--color-text-tertiary))',
+				},
+				'border-color': {
+					primary: 'hsl(var(--color-border-primary))',
+					secondary: 'hsl(var(--color-border-secondary))',
+					tertiary: 'hsl(var(--color-border-tertiary))',
+				},
+				'change': {
+					positive: 'hsl(var(--color-change-positive))',
+					negative: 'hsl(var(--color-change-negative))',
+				},
+				'alert': {
+					'error-bg': 'hsl(var(--color-alert-error-bg))',
+					'error-text': 'hsl(var(--color-alert-error-text))',
+					'success-bg': 'hsl(var(--color-alert-success-bg))',
+					'success-text': 'hsl(var(--color-alert-success-text))',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				// Cookie.fun border radius system
+				'wui-xxs': 'var(--wui-border-radius-xxs)',
+				'wui-xs': 'var(--wui-border-radius-xs)',
+				'wui-s': 'var(--wui-border-radius-s)',
+				'wui-m': 'var(--wui-border-radius-m)',
+				'wui-l': 'var(--wui-border-radius-l)',
+				'wui-3xl': 'var(--wui-border-radius-3xl)',
 			},
 			keyframes: {
 				'accordion-down': {
