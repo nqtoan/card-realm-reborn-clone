@@ -40,7 +40,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router>
         <AuthProvider>
-          <div className="min-h-screen bg-gray-50">
+          <div className="min-h-screen bg-gray-100">
             <Header />
             <main>
               <Routes>

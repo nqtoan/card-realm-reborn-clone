@@ -40,18 +40,18 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-brand-blue/5 to-brand-purple/5 py-12 px-4 sm:px-6 lg:px-8">
-      <Card className="w-full max-w-md border-brand-blue/20 shadow-lg">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold text-brand-dark-blue">{t('auth.login')}</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-3xl font-bold text-gray-900">{t('auth.login')}</CardTitle>
+          <CardDescription className="text-base">
             {t('auth.email')} and {t('auth.password').toLowerCase()}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <Label htmlFor="email" className="text-brand-dark-blue">{t('auth.email')}</Label>
+              <Label htmlFor="email" className="text-gray-900 font-semibold">{t('auth.email')}</Label>
               <Input
                 id="email"
                 type="email"
@@ -59,11 +59,11 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 placeholder={t('auth.email')}
-                className="border-brand-blue/20 focus:border-brand-blue"
+                className="mt-1"
               />
             </div>
             <div>
-              <Label htmlFor="password" className="text-brand-dark-blue">{t('auth.password')}</Label>
+              <Label htmlFor="password" className="text-gray-900 font-semibold">{t('auth.password')}</Label>
               <Input
                 id="password"
                 type="password"
@@ -71,21 +71,21 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 placeholder={t('auth.password')}
-                className="border-brand-blue/20 focus:border-brand-blue"
+                className="mt-1"
               />
             </div>
             <Button 
               type="submit" 
-              className="w-full bg-brand-blue hover:bg-brand-dark-blue text-white" 
+              className="w-full font-bold" 
               disabled={loading}
             >
               {loading ? t('common.loading') : t('auth.login')}
             </Button>
           </form>
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-700 font-medium">
               {t('auth.dontHaveAccount')}{' '}
-              <Link to="/register" className="text-brand-blue hover:text-brand-purple font-medium transition-colors">
+              <Link to="/register" className="text-primary hover:text-primary/80 font-semibold transition-colors">
                 {t('auth.register')}
               </Link>
             </p>
