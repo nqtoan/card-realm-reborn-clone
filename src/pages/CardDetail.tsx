@@ -54,7 +54,7 @@ const CardDetail = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-gray-600">{t('common.loading')}</p>
+          <p className="text-[rgba(251,244,216,0.75)]">{t('common.loading')}</p>
         </div>
       </div>
     );
@@ -142,33 +142,33 @@ const CardDetail = () => {
           {/* Basic Stats */}
           <Card>
             <CardHeader>
-              <CardTitle>{t('cardDetail.cardInformation')}</CardTitle>
+              <CardTitle className="text-black">{t('cardDetail.cardInformation')}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {card.hp && (
                 <div className="flex justify-between">
-                  <span className="text-gray-600">{t('cardDetail.hp')}</span>
-                  <span className="font-medium">{card.hp}</span>
+                  <span className="text-black/70">{t('cardDetail.hp')}</span>
+                  <span className="font-medium text-black">{card.hp}</span>
                 </div>
               )}
               <div className="flex justify-between">
-                <span className="text-gray-600">{t('cardDetail.rarity')}</span>
-                <Badge variant="outline">{card.rarity}</Badge>
+                <span className="text-black/70">{t('cardDetail.rarity')}</span>
+                <Badge variant="outline" className="text-black border-black">{card.rarity}</Badge>
               </div>
               {card.types && (
                 <div className="flex justify-between">
-                  <span className="text-gray-600">{t('cardDetail.types')}</span>
+                  <span className="text-black/70">{t('cardDetail.types')}</span>
                   <div className="flex gap-1">
                     {card.types.map((type) => (
-                      <Badge key={type} variant="secondary">{type}</Badge>
+                      <Badge key={type} variant="secondary" className="text-black">{type}</Badge>
                     ))}
                   </div>
                 </div>
               )}
               {card.artist && (
                 <div className="flex justify-between">
-                  <span className="text-gray-600">{t('cardDetail.artist')}</span>
-                  <span className="font-medium">{card.artist}</span>
+                  <span className="text-black/70">{t('cardDetail.artist')}</span>
+                  <span className="font-medium text-black">{card.artist}</span>
                 </div>
               )}
             </CardContent>
@@ -178,11 +178,11 @@ const CardDetail = () => {
           {card.pricing && (
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5" />
+                <CardTitle className="flex items-center gap-2 text-black">
+                  <TrendingUp className="w-5 h-5 text-black" />
                   {t('cardDetail.marketPrices')}
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="text-black/70">
                   {t('cardDetail.realTimePricing')}
                 </CardDescription>
               </CardHeader>
@@ -191,29 +191,29 @@ const CardDetail = () => {
                   {/* CardMarket Pricing */}
                   {card.pricing.cardmarket && (
                     <div>
-                      <h4 className="font-semibold mb-3 flex items-center gap-2">
+                      <h4 className="font-semibold mb-3 flex items-center gap-2 text-black">
                         <span className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded">{t('cardDetail.cardMarket')}</span>
-                        <span className="text-sm text-gray-500">EUR</span>
+                        <span className="text-sm text-black/60">EUR</span>
                       </h4>
                       <div className="grid grid-cols-2 gap-3 text-sm">
                         <div className="flex justify-between">
-                          <span>{t('cardDetail.average')}</span>
-                          <span className="font-medium">€{card.pricing.cardmarket.avg}</span>
+                          <span className="text-black/70">{t('cardDetail.average')}</span>
+                          <span className="font-medium text-black">€{card.pricing.cardmarket.avg}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>{t('cardDetail.low')}</span>
-                          <span className="font-medium">€{card.pricing.cardmarket.low}</span>
+                          <span className="text-black/70">{t('cardDetail.low')}</span>
+                          <span className="font-medium text-black">€{card.pricing.cardmarket.low}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span>{t('cardDetail.trend')}</span>
-                          <span className="font-medium">€{card.pricing.cardmarket.trend}</span>
+                          <span className="text-black/70">{t('cardDetail.trend')}</span>
+                          <span className="font-medium text-black">€{card.pricing.cardmarket.trend}</span>
                         </div>
                     <div className="flex justify-between">
-                          <span>{t('cardDetail.thirtyDayAvg')}</span>
-                          <span className="font-medium">€{card.pricing.cardmarket.avg30}</span>
+                          <span className="text-black/70">{t('cardDetail.thirtyDayAvg')}</span>
+                          <span className="font-medium text-black">€{card.pricing.cardmarket.avg30}</span>
                         </div>
                       </div>
-                      <p className="text-xs text-gray-500 mt-2">
+                      <p className="text-xs text-black/60 mt-2">
                         {t('cardDetail.updated')} {new Date(card.pricing.cardmarket.updated).toLocaleDateString()}
                       </p>
                     </div>
@@ -222,31 +222,31 @@ const CardDetail = () => {
                   {/* TCGPlayer Pricing */}
                   {card.pricing.tcgplayer && (
                     <div>
-                      <h4 className="font-semibold mb-3 flex items-center gap-2">
+                      <h4 className="font-semibold mb-3 flex items-center gap-2 text-black">
                         <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">{t('cardDetail.tcgPlayer')}</span>
-                        <span className="text-sm text-gray-500">USD</span>
+                        <span className="text-sm text-black/60">USD</span>
                       </h4>
                       <div className="space-y-3">
                         {/* 1st Edition Holofoil */}
                         {card.pricing.tcgplayer['1st-edition-holofoil'] && (
                           <div className="border-l-4 border-yellow-400 pl-3">
-                            <div className="font-medium text-sm">{t('cardDetail.firstEditionHolofoil')}</div>
+                            <div className="font-medium text-sm text-black">{t('cardDetail.firstEditionHolofoil')}</div>
                             <div className="grid grid-cols-2 gap-2 text-sm mt-1">
                               <div className="flex justify-between">
-                                <span>{t('cardDetail.low')}</span>
-                                <span className="font-medium">${card.pricing.tcgplayer['1st-edition-holofoil'].lowPrice}</span>
+                                <span className="text-black/70">{t('cardDetail.low')}</span>
+                                <span className="font-medium text-black">${card.pricing.tcgplayer['1st-edition-holofoil'].lowPrice}</span>
                               </div>
                               <div className="flex justify-between">
-                                <span>{t('cardDetail.market')}</span>
-                                <span className="font-medium">${card.pricing.tcgplayer['1st-edition-holofoil'].marketPrice}</span>
+                                <span className="text-black/70">{t('cardDetail.market')}</span>
+                                <span className="font-medium text-black">${card.pricing.tcgplayer['1st-edition-holofoil'].marketPrice}</span>
                               </div>
                               <div className="flex justify-between">
-                                <span>{t('cardDetail.high')}</span>
-                                <span className="font-medium">${card.pricing.tcgplayer['1st-edition-holofoil'].highPrice}</span>
+                                <span className="text-black/70">{t('cardDetail.high')}</span>
+                                <span className="font-medium text-black">${card.pricing.tcgplayer['1st-edition-holofoil'].highPrice}</span>
                               </div>
                     <div className="flex justify-between">
-                                <span>{t('cardDetail.mid')}</span>
-                                <span className="font-medium">${card.pricing.tcgplayer['1st-edition-holofoil'].midPrice}</span>
+                                <span className="text-black/70">{t('cardDetail.mid')}</span>
+                                <span className="font-medium text-black">${card.pricing.tcgplayer['1st-edition-holofoil'].midPrice}</span>
                               </div>
                             </div>
                     </div>
@@ -255,29 +255,29 @@ const CardDetail = () => {
                         {/* Unlimited Holofoil */}
                         {card.pricing.tcgplayer['unlimited-holofoil'] && (
                           <div className="border-l-4 border-blue-400 pl-3">
-                            <div className="font-medium text-sm">{t('cardDetail.unlimitedHolofoil')}</div>
+                            <div className="font-medium text-sm text-black">{t('cardDetail.unlimitedHolofoil')}</div>
                             <div className="grid grid-cols-2 gap-2 text-sm mt-1">
                               <div className="flex justify-between">
-                                <span>{t('cardDetail.low')}</span>
-                                <span className="font-medium">${card.pricing.tcgplayer['unlimited-holofoil'].lowPrice}</span>
+                                <span className="text-black/70">{t('cardDetail.low')}</span>
+                                <span className="font-medium text-black">${card.pricing.tcgplayer['unlimited-holofoil'].lowPrice}</span>
                               </div>
                               <div className="flex justify-between">
-                                <span>{t('cardDetail.market')}</span>
-                                <span className="font-medium">${card.pricing.tcgplayer['unlimited-holofoil'].marketPrice}</span>
+                                <span className="text-black/70">{t('cardDetail.market')}</span>
+                                <span className="font-medium text-black">${card.pricing.tcgplayer['unlimited-holofoil'].marketPrice}</span>
                               </div>
                               <div className="flex justify-between">
-                                <span>{t('cardDetail.high')}</span>
-                                <span className="font-medium">${card.pricing.tcgplayer['unlimited-holofoil'].highPrice}</span>
+                                <span className="text-black/70">{t('cardDetail.high')}</span>
+                                <span className="font-medium text-black">${card.pricing.tcgplayer['unlimited-holofoil'].highPrice}</span>
                               </div>
                     <div className="flex justify-between">
-                                <span>{t('cardDetail.mid')}</span>
-                                <span className="font-medium">${card.pricing.tcgplayer['unlimited-holofoil'].midPrice}</span>
+                                <span className="text-black/70">{t('cardDetail.mid')}</span>
+                                <span className="font-medium text-black">${card.pricing.tcgplayer['unlimited-holofoil'].midPrice}</span>
                               </div>
                             </div>
                           </div>
                         )}
                       </div>
-                      <p className="text-xs text-gray-500 mt-2">
+                      <p className="text-xs text-black/60 mt-2">
                         {t('cardDetail.updated')} {new Date(card.pricing.tcgplayer.updated).toLocaleDateString()}
                       </p>
                     </div>
@@ -303,13 +303,13 @@ const CardDetail = () => {
           <TabsContent value="attacks" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>{t('cardDetail.attacksAbilities')}</CardTitle>
+                <CardTitle className="text-black">{t('cardDetail.attacksAbilities')}</CardTitle>
               </CardHeader>
               <CardContent>
                 {/* Abilities */}
                 {card.abilities && card.abilities.length > 0 && (
                   <div className="space-y-4 mb-6">
-                    <h4 className="font-semibold text-lg">{t('cardDetail.abilities')}</h4>
+                    <h4 className="font-semibold text-lg text-black">{t('cardDetail.abilities')}</h4>
                     {card.abilities.map((ability, index) => (
                       <div key={index} className="border rounded-lg p-4 bg-blue-50">
                         <div className="flex justify-between items-start mb-2">
@@ -318,7 +318,7 @@ const CardDetail = () => {
                             {ability.type}
                           </Badge>
                         </div>
-                        <p className="text-sm text-gray-700">{ability.effect}</p>
+                        <p className="text-sm text-black/70">{ability.effect}</p>
                       </div>
                     ))}
                   </div>
@@ -327,25 +327,25 @@ const CardDetail = () => {
                 {/* Attacks */}
                 {card.attacks && card.attacks.length > 0 ? (
                   <div className="space-y-4">
-                    <h4 className="font-semibold text-lg">{t('cardDetail.attacks')}</h4>
+                    <h4 className="font-semibold text-lg text-black">{t('cardDetail.attacks')}</h4>
                     {card.attacks.map((attack, index) => (
                       <div key={index} className="border rounded-lg p-4">
                         <div className="flex justify-between items-start mb-2">
-                          <h3 className="font-semibold">{attack.name}</h3>
-                          <span className="font-bold text-lg">{attack.damage}</span>
+                          <h3 className="font-semibold text-black">{attack.name}</h3>
+                          <span className="font-bold text-lg text-black">{attack.damage}</span>
                         </div>
                         <div className="flex gap-2 mb-2">
                           {attack.cost.map((cost, costIndex) => (
-                            <Badge key={costIndex} variant="outline">{cost}</Badge>
+                            <Badge key={costIndex} variant="outline" className="text-black border-black">{cost}</Badge>
                           ))}
                         </div>
-                        <p className="text-sm text-gray-600">{attack.text}</p>
+                        <p className="text-sm text-black/70">{attack.text}</p>
                       </div>
                     ))}
                   </div>
                 ) : (
                   !card.abilities || card.abilities.length === 0 ? (
-                    <p className="text-gray-500">{t('cardDetail.noAttacksOrAbilities')}</p>
+                    <p className="text-black/60">{t('cardDetail.noAttacksOrAbilities')}</p>
                   ) : null
                 )}
               </CardContent>
@@ -356,40 +356,40 @@ const CardDetail = () => {
             <div className="grid md:grid-cols-2 gap-4">
               <Card>
                 <CardHeader>
-                  <CardTitle>{t('cardDetail.weaknesses')}</CardTitle>
+                  <CardTitle className="text-black">{t('cardDetail.weaknesses')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   {card.weaknesses && card.weaknesses.length > 0 ? (
                     <div className="space-y-2">
                       {card.weaknesses.map((weakness, index) => (
                         <div key={index} className="flex justify-between">
-                          <span>{weakness.type}</span>
-                          <span className="font-medium">{weakness.value}</span>
+                          <span className="text-black/70">{weakness.type}</span>
+                          <span className="font-medium text-black">{weakness.value}</span>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <p className="text-gray-500">{t('cardDetail.noWeaknesses')}</p>
+                    <p className="text-black/60">{t('cardDetail.noWeaknesses')}</p>
                   )}
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <CardTitle>{t('cardDetail.resistances')}</CardTitle>
+                  <CardTitle className="text-black">{t('cardDetail.resistances')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   {card.resistances && card.resistances.length > 0 ? (
                     <div className="space-y-2">
                       {card.resistances.map((resistance, index) => (
                         <div key={index} className="flex justify-between">
-                          <span>{resistance.type}</span>
-                          <span className="font-medium">{resistance.value}</span>
+                          <span className="text-black/70">{resistance.type}</span>
+                          <span className="font-medium text-black">{resistance.value}</span>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <p className="text-gray-500">{t('cardDetail.noResistances')}</p>
+                    <p className="text-black/60">{t('cardDetail.noResistances')}</p>
                   )}
                 </CardContent>
               </Card>
@@ -400,7 +400,7 @@ const CardDetail = () => {
             <div className="grid md:grid-cols-2 gap-4">
               <Card>
                 <CardHeader>
-                  <CardTitle>{t('cardDetail.cardVariants')}</CardTitle>
+                  <CardTitle className="text-black">{t('cardDetail.cardVariants')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   {card.variants ? (
@@ -408,48 +408,48 @@ const CardDetail = () => {
                       <div className="grid grid-cols-2 gap-2">
                         <div className="flex items-center gap-2">
                           <div className={`w-3 h-3 rounded-full ${card.variants.normal ? 'bg-green-500' : 'bg-gray-300'}`}></div>
-                          <span className="text-sm">{t('cardDetail.normal')}</span>
+                          <span className="text-sm text-black">{t('cardDetail.normal')}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <div className={`w-3 h-3 rounded-full ${card.variants.holo ? 'bg-blue-500' : 'bg-gray-300'}`}></div>
-                          <span className="text-sm">{t('cardDetail.holofoil')}</span>
+                          <span className="text-sm text-black">{t('cardDetail.holofoil')}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <div className={`w-3 h-3 rounded-full ${card.variants.reverse ? 'bg-purple-500' : 'bg-gray-300'}`}></div>
-                          <span className="text-sm">{t('cardDetail.reverseHolo')}</span>
+                          <span className="text-sm text-black">{t('cardDetail.reverseHolo')}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <div className={`w-3 h-3 rounded-full ${card.variants.firstEdition ? 'bg-yellow-500' : 'bg-gray-300'}`}></div>
-                          <span className="text-sm">{t('cardDetail.firstEdition')}</span>
+                          <span className="text-sm text-black">{t('cardDetail.firstEdition')}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <div className={`w-3 h-3 rounded-full ${card.variants.wPromo ? 'bg-red-500' : 'bg-gray-300'}`}></div>
-                          <span className="text-sm">{t('cardDetail.wPromo')}</span>
+                          <span className="text-sm text-black">{t('cardDetail.wPromo')}</span>
                         </div>
                       </div>
                     </div>
                   ) : (
-                    <p className="text-gray-500">{t('cardDetail.noVariantInfo')}</p>
+                    <p className="text-black/60">{t('cardDetail.noVariantInfo')}</p>
                   )}
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <CardTitle>{t('cardDetail.detailedVariants')}</CardTitle>
+                  <CardTitle className="text-black">{t('cardDetail.detailedVariants')}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   {card.variants_detailed && card.variants_detailed.length > 0 ? (
                     <div className="space-y-2">
                       {card.variants_detailed.map((variant, index) => (
                         <div key={index} className="flex justify-between items-center p-2 bg-gray-50 rounded">
-                          <span className="font-medium capitalize">{variant.type}</span>
-                          <Badge variant="outline">{variant.size}</Badge>
+                          <span className="font-medium capitalize text-black">{variant.type}</span>
+                          <Badge variant="outline" className="text-black border-black">{variant.size}</Badge>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <p className="text-gray-500">{t('cardDetail.noDetailedVariantInfo')}</p>
+                    <p className="text-black/60">{t('cardDetail.noDetailedVariantInfo')}</p>
                   )}
                 </CardContent>
               </Card>
@@ -459,14 +459,14 @@ const CardDetail = () => {
           <TabsContent value="legalities" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>{t('cardDetail.formatLegalities')}</CardTitle>
+                <CardTitle className="text-black">{t('cardDetail.formatLegalities')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
                   {Object.entries(card.legalities).map(([format, legal]) => (
                     <div key={format} className="flex justify-between items-center">
-                      <span className="capitalize">{format}</span>
-                      <Badge variant={legal === 'Legal' ? 'default' : 'destructive'}>
+                      <span className="capitalize text-black/70">{format}</span>
+                      <Badge variant={legal === 'Legal' ? 'default' : 'destructive'} className="text-black">
                         {legal}
                       </Badge>
                     </div>
@@ -479,29 +479,29 @@ const CardDetail = () => {
           <TabsContent value="flavor" className="space-y-4">
             <Card>
               <CardHeader>
-                <CardTitle>{t('cardDetail.flavorTextDetails')}</CardTitle>
+                <CardTitle className="text-black">{t('cardDetail.flavorTextDetails')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {card.flavorText && (
                   <div>
-                    <h3 className="font-semibold mb-2">{t('cardDetail.flavorText')}</h3>
-                    <p className="text-gray-700 italic">{card.flavorText}</p>
+                    <h3 className="font-semibold mb-2 text-black">{t('cardDetail.flavorText')}</h3>
+                    <p className="text-black/70 italic">{card.flavorText}</p>
                   </div>
                 )}
                 {card.nationalPokedexNumbers && card.nationalPokedexNumbers.length > 0 && (
                   <div>
-                    <h3 className="font-semibold mb-2">{t('cardDetail.pokedexNumbers')}</h3>
+                    <h3 className="font-semibold mb-2 text-black">{t('cardDetail.pokedexNumbers')}</h3>
                     <div className="flex gap-2">
                       {card.nationalPokedexNumbers.map((num) => (
-                        <Badge key={num} variant="outline">#{num}</Badge>
+                        <Badge key={num} variant="outline" className="text-black border-black">#{num}</Badge>
                       ))}
                     </div>
                   </div>
                 )}
                 {card.convertedRetreatCost !== undefined && (
                   <div>
-                    <h3 className="font-semibold mb-2">{t('cardDetail.retreatCost')}</h3>
-                    <p>{card.convertedRetreatCost} {t('cardDetail.energy')}</p>
+                    <h3 className="font-semibold mb-2 text-black">{t('cardDetail.retreatCost')}</h3>
+                    <p className="text-black/70">{card.convertedRetreatCost} {t('cardDetail.energy')}</p>
                   </div>
                 )}
               </CardContent>
