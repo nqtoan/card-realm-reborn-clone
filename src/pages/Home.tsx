@@ -15,11 +15,11 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-magox font-bold text-neo-beige mb-6">
+          <h1 className="text-5xl md:text-6xl font-magox font-bold text-[#FBF4D8] mb-6">
             {t('home.heroTitle')}
             <span className="text-neo-yellow block">{t('home.heroSubtitle')}</span>
           </h1>
-          <p className="text-xl text-neo-beige mb-10 max-w-3xl mx-auto font-sf-pro font-medium">
+          <p className="text-xl text-[rgba(251,244,216,0.75)] mb-10 max-w-3xl mx-auto font-sf-pro font-medium">
             {t('home.heroDescription')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -50,7 +50,7 @@ const Home = () => {
       {/* Features Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-magox font-bold text-center text-neo-beige mb-16">
+          <h2 className="text-4xl font-magox font-bold text-center text-[#FBF4D8] mb-16">
             {t('home.featuresTitle')}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -112,7 +112,7 @@ const Home = () => {
             <h2 className="text-4xl font-magox font-bold mb-6 text-neo-black">
               {t('home.ctaTitle')}
             </h2>
-            <p className="text-xl mb-10 text-neo-black font-sf-pro font-medium">
+            <p className="text-xl mb-10 text-[rgba(0,0,0,0.65)] font-sf-pro font-medium">
               {t('home.ctaDescription')}
             </p>
             {!isAuthenticated && (

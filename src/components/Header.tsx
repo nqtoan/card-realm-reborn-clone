@@ -37,13 +37,13 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-3">
-            <Link to="/dashboard" className="text-neo-beige hover:text-neo-yellow px-4 py-2 text-sm font-semibold border-2 border-transparent hover:border-neo-yellow rounded-lg transition-all">
+            <Link to="/dashboard" className="text-[#FBF4D8] hover:text-neo-yellow px-4 py-2 text-sm font-semibold border-2 border-transparent hover:border-neo-yellow rounded-lg transition-all">
               {t('header.dashboard')}
             </Link>
-            <Link to="/sets" className="text-neo-beige hover:text-neo-yellow px-4 py-2 text-sm font-semibold border-2 border-transparent hover:border-neo-yellow rounded-lg transition-all">
+            <Link to="/sets" className="text-[#FBF4D8] hover:text-neo-yellow px-4 py-2 text-sm font-semibold border-2 border-transparent hover:border-neo-yellow rounded-lg transition-all">
               {t('header.sets')}
             </Link>
-            <Link to="/cards" className="text-neo-beige hover:text-neo-yellow px-4 py-2 text-sm font-semibold border-2 border-transparent hover:border-neo-yellow rounded-lg transition-all">
+            <Link to="/cards" className="text-[#FBF4D8] hover:text-neo-yellow px-4 py-2 text-sm font-semibold border-2 border-transparent hover:border-neo-yellow rounded-lg transition-all">
               {t('header.cards')}
             </Link>
             <Link to="/dashboard/premium" className="text-neo-yellow hover:text-neo-beige px-4 py-2 text-sm font-bold border-2 border-neo-yellow hover:bg-neo-yellow hover:text-neo-black rounded-lg transition-all">
@@ -100,7 +100,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden hover:bg-neo-beige/10 p-2 text-neo-beige"
+              className="md:hidden hover:bg-neo-beige/10 p-2 text-[#FBF4D8]"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -137,21 +137,21 @@ const Header = () => {
               <div className="space-y-2">
                 <Link
                   to="/dashboard"
-                  className="block px-3 py-3 text-base font-semibold text-neo-beige hover:text-neo-yellow hover:bg-neo-beige/10 rounded-lg transition-colors border-2 border-transparent hover:border-neo-yellow"
+                  className="block px-3 py-3 text-base font-semibold text-[#FBF4D8] hover:text-neo-yellow hover:bg-neo-beige/10 rounded-lg transition-colors border-2 border-transparent hover:border-neo-yellow"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t('header.dashboard')}
                 </Link>
                 <Link
                   to="/sets"
-                  className="block px-3 py-3 text-base font-semibold text-neo-beige hover:text-neo-yellow hover:bg-neo-beige/10 rounded-lg transition-colors border-2 border-transparent hover:border-neo-yellow"
+                  className="block px-3 py-3 text-base font-semibold text-[#FBF4D8] hover:text-neo-yellow hover:bg-neo-beige/10 rounded-lg transition-colors border-2 border-transparent hover:border-neo-yellow"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t('header.sets')}
                 </Link>
                 <Link
                   to="/cards"
-                  className="block px-3 py-3 text-base font-semibold text-neo-beige hover:text-neo-yellow hover:bg-neo-beige/10 rounded-lg transition-colors border-2 border-transparent hover:border-neo-yellow"
+                  className="block px-3 py-3 text-base font-semibold text-[#FBF4D8] hover:text-neo-yellow hover:bg-neo-beige/10 rounded-lg transition-colors border-2 border-transparent hover:border-neo-yellow"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t('header.cards')}
