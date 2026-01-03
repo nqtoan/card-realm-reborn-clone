@@ -108,7 +108,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="card-neo p-12">
+          <div className="bg-neo-beige border-2 border-white rounded-lg shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)] p-12">
             <h2 className="text-4xl font-magox font-bold mb-6 text-neo-black">
               {t('home.ctaTitle')}
             </h2>

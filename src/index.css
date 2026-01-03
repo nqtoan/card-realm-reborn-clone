@@ -59,234 +59,87 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-Based on PokedExplore design system.
-*/
-
 @layer base {
   :root {
     /* Soft Neobrutalism Color System */
-    --background: 0 0% 0%; /* #000000 - Black background */
-    --foreground: 48 100% 92%; /* #FBF4D8 - Beige text */
+    --background: 0 0% 0%;
+    --foreground: 48 100% 92%;
 
-    --card: 48 100% 92%; /* #FBF4D8 - Beige card background */
-    --card-foreground: 0 0% 0%; /* #000000 - Black text on beige */
+    --card: 48 100% 92%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 48 100% 92%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 43 95% 50%; /* #F8AF06 - Yellow accent */
+    --primary: 43 95% 50%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 290 35% 72%; /* #CAACD2 - Purple accent */
+    --secondary: 290 35% 72%;
     --secondary-foreground: 0 0% 0%;
 
     --muted: 48 100% 92%;
     --muted-foreground: 0 0% 0%;
 
-    --accent: 150 80% 36%; /* #09A663 - Green accent */
+    --accent: 150 80% 36%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 100%; /* #FFFFFF - White border */
-    --input: 0 0% 100%;
-    --ring: 43 95% 50%;
-
-    --radius: 0.75rem; /* Rounded corners for neobrutalism */
-
-    /* Neobrutalism Accent Colors */
-    --brand-yellow: 43 95% 50%; /* #F8AF06 - Yellow */
-    --brand-purple: 290 35% 72%; /* #CAACD2 - Purple */
-    --brand-green: 150 80% 36%; /* #09A663 - Green */
-    --brand-beige: 48 100% 92%; /* #FBF4D8 - Beige */
-    --brand-black: 0 0% 0%; /* #000000 - Black */
-    --brand-white: 0 0% 100%; /* #FFFFFF - White */
-    
-    /* Legacy compatibility */
-    --brand-blue: 217 91% 60%;
-    --brand-dark-blue: 220 91% 23%;
-    --brand-gold: 43 95% 50%;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 217 91% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 17% 96%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 217 91% 60%;
-
-    /* Cookie.fun design system variables */
-    
-    /* Spacing system (--wui-spacing-*) */
-    --wui-spacing-xxs: 0.25rem;    /* 4px */
-    --wui-spacing-xs: 0.5rem;      /* 8px */
-    --wui-spacing-s: 0.75rem;      /* 12px */
-    --wui-spacing-m: 1rem;         /* 16px */
-    --wui-spacing-l: 1.5rem;       /* 24px */
-    --wui-spacing-xl: 2rem;        /* 32px */
-    --wui-spacing-xxl: 3rem;       /* 48px */
-    --wui-spacing-2l: 2.5rem;      /* 40px */
-    --wui-spacing-3xs: 0.125rem;   /* 2px */
-    --wui-spacing-1xs: 0.375rem;   /* 6px */
-
-    /* Border radius system */
-    --wui-border-radius-xxs: 0.125rem;  /* 2px */
-    --wui-border-radius-xs: 0.25rem;    /* 4px */
-    --wui-border-radius-s: 0.5rem;      /* 8px */
-    --wui-border-radius-m: 0.75rem;     /* 12px */
-    --wui-border-radius-l: 1rem;        /* 16px */
-    --wui-border-radius-3xl: 1.5rem;    /* 24px */
-
-    /* Duration & Easing */
-    --wui-duration-md: 200ms;
-    --wui-duration-lg: 300ms;
-    --wui-ease-inout-power-1: cubic-bezier(0.4, 0, 0.2, 1);
-    --wui-ease-out-power-1: cubic-bezier(0, 0, 0.2, 1);
-
-    /* Glass colors (light theme) */
-    --wui-color-gray-glass-002: rgba(0, 0, 0, 0.02);
-    --wui-color-gray-glass-005: rgba(0, 0, 0, 0.05);
-    --wui-color-gray-glass-010: rgba(0, 0, 0, 0.1);
-    --wui-color-gray-glass-020: rgba(0, 0, 0, 0.2);
-    --wui-color-accent-glass-010: rgba(13, 110, 253, 0.1);
-    --wui-color-accent-glass-015: rgba(13, 110, 253, 0.15);
-    --wui-color-accent-glass-020: rgba(13, 110, 253, 0.2);
-
-    /* Surface colors (cookie.fun style) */
-    --color-surface-primary: 0 0% 100%;
-    --color-surface-secondary: 0 0% 98%;
-    --color-surface-tertiary: 0 0% 96%;
-
-    /* Text colors */
-    --color-text-primary: 222.2 84% 4.9%;
-    --color-text-secondary: 215 16% 47%;
-    --color-text-tertiary: 215 16% 65%;
-
-    /* Border colors */
-    --color-border-primary: 214 32% 91%;
-    --color-border-secondary: 214 32% 95%;
-    --color-border-tertiary: 214 32% 98%;
-    --color-border-primary-alpha: rgba(222, 228, 235, 0.5);
-
-    /* Change indicators */
-    --color-change-positive: 142 71% 45%;
-    --color-change-negative: 0 84% 60%;
-
-    /* Alert colors */
-    --color-alert-error-bg: 0 84% 60%;
-    --color-alert-error-text: 0 0% 100%;
-    --color-alert-success-bg: 142 71% 45%;
-    --color-alert-success-text: 0 0% 100%;
-  }
-
-  .dark {
-    /* Soft Neobrutalism - Same as light theme (always black background) */
-    --background: 0 0% 0%; /* #000000 - Black background */
-    --foreground: 48 100% 92%; /* #FBF4D8 - Beige text */
-
-    --card: 48 100% 92%; /* #FBF4D8 - Beige card background */
-    --card-foreground: 0 0% 0%; /* #000000 - Black text on beige */
-
-    --popover: 48 100% 92%;
-    --popover-foreground: 0 0% 0%;
-
-    --primary: 43 95% 50%; /* #F8AF06 - Yellow accent */
-    --primary-foreground: 0 0% 0%;
-
-    --secondary: 290 35% 72%; /* #CAACD2 - Purple accent */
-    --secondary-foreground: 0 0% 0%;
-
-    --muted: 48 100% 92%;
-    --muted-foreground: 0 0% 0%;
-
-    --accent: 150 80% 36%; /* #09A663 - Green accent */
-    --accent-foreground: 0 0% 0%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 100%; /* #FFFFFF - White border */
+    --border: 0 0% 100%;
     --input: 0 0% 100%;
     --ring: 43 95% 50%;
 
     --radius: 0.75rem;
-
-    --brand-yellow: 43 95% 50%;
-    --brand-purple: 290 35% 72%;
-    --brand-green: 150 80% 36%;
-    --brand-beige: 48 100% 92%;
-    --brand-black: 0 0% 0%; /* #000000 - Black */
-    --brand-white: 0 0% 100%; /* #FFFFFF - White */
-    
-    /* Legacy compatibility */
-    --brand-blue: 217 91% 60%;
-    --brand-dark-blue: 220 91% 23%;
-    --brand-gold: 43 95% 50%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 217 91% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 16%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 16%;
-    --sidebar-ring: 217 91% 60%;
-
-    /* Cookie.fun design system variables (dark theme) */
-    
-    /* Glass colors (dark theme) */
-    --wui-color-gray-glass-002: rgba(255, 255, 255, 0.02);
-    --wui-color-gray-glass-005: rgba(255, 255, 255, 0.05);
-    --wui-color-gray-glass-010: rgba(255, 255, 255, 0.1);
-    --wui-color-gray-glass-020: rgba(255, 255, 255, 0.2);
-    --wui-color-accent-glass-010: rgba(13, 110, 253, 0.2);
-    --wui-color-accent-glass-015: rgba(13, 110, 253, 0.25);
-    --wui-color-accent-glass-020: rgba(13, 110, 253, 0.3);
-
-    /* Surface colors (dark theme) */
-    --color-surface-primary: 222.2 84% 4.9%;
-    --color-surface-secondary: 217 32% 18%;
-    --color-surface-tertiary: 240 3.7% 16%;
-
-    /* Text colors (dark theme) */
-    --color-text-primary: 210 40% 98%;
-    --color-text-secondary: 215 20% 65%;
-    --color-text-tertiary: 215 20% 50%;
-
-    /* Border colors (dark theme) */
-    --color-border-primary: 217 32% 18%;
-    --color-border-secondary: 240 3.7% 16%;
-    --color-border-tertiary: 240 3.7% 12%;
-    --color-border-primary-alpha: rgba(30, 41, 59, 0.5);
-
-    /* Change indicators (dark theme) */
-    --color-change-positive: 142 71% 55%;
-    --color-change-negative: 0 84% 70%;
   }
-}
 
-@layer base {
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 48 100% 92%;
+
+    --card: 48 100% 92%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 48 100% 92%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 43 95% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 290 35% 72%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 48 100% 92%;
+    --muted-foreground: 0 0% 0%;
+
+    --accent: 150 80% 36%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 43 95% 50%;
+
+    --radius: 0.75rem;
+  }
+
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground;
-    background-color: #000000; /* Black background */
-    color: #FBF4D8; /* Beige text */
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     min-height: 100vh;
   }
 
-  /* Neobrutalism Typography */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Magox', 'SF Pro Display', sans-serif;
     font-weight: 700;
-    color: #FBF4D8; /* Beige text */
+    color: hsl(var(--foreground));
     letter-spacing: -0.02em;
     line-height: 1.1;
   }
@@ -307,387 +160,8 @@ Based on PokedExplore design system.
     font-size: clamp(1.25rem, 3vw, 2rem);
   }
 
-  /* Body text uses SF Pro Display */
   p, span, div, a, button, input, textarea, select, label, li {
     font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: #FBF4D8;
-  }
-}
-
-/* PokedExplore utility classes */
-@layer utilities {
-  /* Fade-in animation */
-  .fade-in-top {
-    animation: fade-in-top 0.5s ease-out;
-  }
-
-  /* Wave animation container */
-  .ocean {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.9) 100%);
-    animation: wave 25s linear infinite;
-  }
-
-  .wave:nth-child(2) {
-    animation-delay: -5s;
-    opacity: 0.7;
-  }
-
-  .wave:nth-child(3) {
-    animation-delay: -10s;
-    opacity: 0.5;
-  }
-
-  /* Text light utility (for dark backgrounds) */
-  .text-light {
-    color: #ffffff;
-  }
-
-  /* Button primary style (PokedExplore) */
-  .button-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6 py-3 rounded-md transition-colors inline-flex items-center justify-center;
-    gap: 0.5rem; 
-  }
-  
-  .button-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 font-medium px-6 py-3 rounded-md transition-colors inline-flex items-center justify-center;
-    gap: 0.5rem;
-  }  
-
-  /* Brand color utilities */
-  .text-brand-blue {
-    color: hsl(var(--brand-blue));
-  }
-  
-  .text-brand-dark-blue {
-    color: hsl(var(--brand-dark-blue));
-  }
-  
-  .text-brand-purple {
-    color: hsl(var(--brand-purple));
-  }
-  
-  .text-brand-gold {
-    color: hsl(var(--brand-gold));
-  }
-  
-  .bg-brand-blue {
-    background-color: hsl(var(--brand-blue));
-  }
-  
-  .bg-brand-dark-blue {
-    background-color: hsl(var(--brand-dark-blue));
-  }
-  
-  .bg-brand-purple {
-    background-color: hsl(var(--brand-purple));
-  }
-  
-  .bg-brand-gold {
-    background-color: hsl(var(--brand-gold));
-  }
-  
-  .border-brand-blue {
-    border-color: hsl(var(--brand-blue));
-  }
-  
-  .border-brand-dark-blue {
-    border-color: hsl(var(--brand-dark-blue));
-  }
-  
-  .border-brand-purple {
-    border-color: hsl(var(--brand-purple));
-  }
-  
-  .border-brand-gold {
-    border-color: hsl(var(--brand-gold));
-  }
-
-  /* Cookie.fun design system utilities */
-
-  /* Surface colors */
-  .bg-surface-primary {
-    background-color: hsl(var(--color-surface-primary));
-  }
-
-  .bg-surface-secondary {
-    background-color: hsl(var(--color-surface-secondary));
-  }
-
-  .bg-surface-tertiary {
-    background-color: hsl(var(--color-surface-tertiary));
-  }
-
-  /* Text colors */
-  .text-text-primary {
-    color: hsl(var(--color-text-primary));
-  }
-
-  .text-text-secondary {
-    color: hsl(var(--color-text-secondary));
-  }
-
-  .text-text-tertiary {
-    color: hsl(var(--color-text-tertiary));
-  }
-
-  /* Border colors */
-  .border-border-primary {
-    border-color: hsl(var(--color-border-primary));
-  }
-
-  .border-border-secondary {
-    border-color: hsl(var(--color-border-secondary));
-  }
-
-  .border-border-tertiary {
-    border-color: hsl(var(--color-border-tertiary));
-  }
-
-  .border-border-primary-alpha {
-    border-color: var(--color-border-primary-alpha);
-  }
-
-  /* Glass effects */
-  .bg-gray-glass-002 {
-    background-color: var(--wui-color-gray-glass-002);
-  }
-
-  .bg-gray-glass-005 {
-    background-color: var(--wui-color-gray-glass-005);
-  }
-
-  .bg-gray-glass-010 {
-    background-color: var(--wui-color-gray-glass-010);
-  }
-
-  .bg-gray-glass-020 {
-    background-color: var(--wui-color-gray-glass-020);
-  }
-
-  .bg-accent-glass-010 {
-    background-color: var(--wui-color-accent-glass-010);
-  }
-
-  .bg-accent-glass-015 {
-    background-color: var(--wui-color-accent-glass-015);
-  }
-
-  .bg-accent-glass-020 {
-    background-color: var(--wui-color-accent-glass-020);
-  }
-
-  .border-gray-glass-002 {
-    border-color: var(--wui-color-gray-glass-002);
-  }
-
-  .border-gray-glass-005 {
-    border-color: var(--wui-color-gray-glass-005);
-  }
-
-  .border-gray-glass-010 {
-    border-color: var(--wui-color-gray-glass-010);
-  }
-
-  /* Neumorphic shadow */
-  .shadow-neumorphic {
-    box-shadow: 
-      8px 8px 16px rgba(0, 0, 0, 0.1),
-      -8px -8px 16px rgba(255, 255, 255, 0.9);
-  }
-
-  .dark .shadow-neumorphic {
-    box-shadow: 
-      8px 8px 16px rgba(0, 0, 0, 0.3),
-      -8px -8px 16px rgba(255, 255, 255, 0.05);
-  }
-
-  /* Change indicators */
-  .text-change-positive {
-    color: hsl(var(--color-change-positive));
-  }
-
-  .text-change-negative {
-    color: hsl(var(--color-change-negative));
-  }
-
-  .bg-change-positive {
-    background-color: hsl(var(--color-change-positive));
-  }
-
-  .bg-change-negative {
-    background-color: hsl(var(--color-change-negative));
-  }
-
-  /* Alert colors */
-  .bg-alert-error-bg {
-    background-color: hsl(var(--color-alert-error-bg));
-  }
-
-  .text-alert-error-text {
-    color: hsl(var(--color-alert-error-text));
-  }
-
-  .bg-alert-success-bg {
-    background-color: hsl(var(--color-alert-success-bg));
-  }
-
-  .text-alert-success-text {
-    color: hsl(var(--color-alert-success-text));
-  }
-
-  /* Glass border utility */
-  .border-glass {
-    box-shadow: inset 0 0 0 1px var(--wui-color-gray-glass-010);
-  }
-
-  .border-glass-accent {
-    box-shadow: inset 0 0 0 1px var(--wui-color-accent-glass-010);
-  }
-
-  /* Hide scrollbar utility */
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Tracking utilities */
-  .tracking-small {
-    letter-spacing: -0.01em;
-  }
-
-  /* ========================================
-     SOFT NEOBRUTALISM UTILITY CLASSES
-     ======================================== */
-
-  /* Neobrutalism Card Style */
-  .card-neo {
-    background-color: #FBF4D8; /* Beige */
-    border: 2px solid #FFFFFF; /* White stroke */
-    border-radius: 0.75rem;
-    box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.3);
-    transition: all 0.2s ease;
-  }
-
-  .card-neo:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 0.4);
-  }
-
-  /* Neobrutalism Button Styles */
-  .button-neo {
-    background-color: #F8AF06; /* Yellow default */
-    border: 2px solid #FFFFFF;
-    border-radius: 0.75rem;
-    color: #000000;
-    font-family: 'SF Pro Display', sans-serif;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    transition: all 0.1s ease;
-    cursor: pointer;
-    box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.3);
-  }
-
-  .button-neo:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 0.4);
-  }
-
-  .button-neo:active {
-    transform: translate(0, 0);
-    box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 0.3);
-  }
-
-  .button-neo-purple {
-    background-color: #CAACD2;
-  }
-
-  .button-neo-green {
-    background-color: #09A663;
-  }
-
-  /* Neobrutalism Input Style */
-  .input-neo {
-    background-color: #FBF4D8; /* Beige */
-    border: 2px solid #FFFFFF;
-    border-radius: 0.75rem;
-    color: #000000;
-    font-family: 'SF Pro Display', sans-serif;
-    font-weight: 500;
-    padding: 0.75rem 1rem;
-    transition: all 0.2s ease;
-  }
-
-  .input-neo:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(248, 175, 6, 0.3), 4px 4px 0px 0px rgba(255, 255, 255, 0.3);
-  }
-
-  .input-neo::placeholder {
-    color: rgba(0, 0, 0, 0.5);
-  }
-
-  /* Neobrutalism Text Colors */
-  .text-neo-beige {
-    color: #FBF4D8;
-  }
-
-  .text-neo-black {
-    color: #000000;
-  }
-
-  .text-neo-yellow {
-    color: #F8AF06;
-  }
-
-  .text-neo-purple {
-    color: #CAACD2;
-  }
-
-  .text-neo-green {
-    color: #09A663;
-  }
-
-  /* Neobrutalism Background Colors */
-  .bg-neo-black {
-    background-color: #000000;
-  }
-
-  .bg-neo-beige {
-    background-color: #FBF4D8;
-  }
-
-  .bg-neo-yellow {
-    background-color: #F8AF06;
-  }
-
-  .bg-neo-purple {
-    background-color: #CAACD2;
-  }
-
-  .bg-neo-green {
-    background-color: #09A663;
-  }
-
-  /* Neobrutalism Border */
-  .border-neo-white {
-    border: 2px solid #FFFFFF;
+    color: hsl(var(--foreground));
   }
 }

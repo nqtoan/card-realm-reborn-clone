@@ -23,10 +23,6 @@ export default {
 				sans: ['SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
 				magox: ['Magox', 'SF Pro Display', 'sans-serif'],
 				'sf-pro': ['SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-				// Legacy fonts for compatibility
-				inter: ['SF Pro Display', 'sans-serif'],
-				'dm-sans': ['SF Pro Display', 'sans-serif'],
-				montserrat: ['SF Pro Display', 'sans-serif'],
 			},
 			colors: {
 				// Neobrutalism colors
@@ -38,7 +34,6 @@ export default {
 					green: '#09A663',
 					white: '#FFFFFF',
 				},
-			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
