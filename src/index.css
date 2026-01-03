@@ -415,22 +415,6 @@ Based on PokedExplore design system.
   .border-brand-gold {
     border-color: hsl(var(--brand-gold));
   }
-  
-  .hover\:bg-brand-blue:hover {
-    background-color: hsl(var(--brand-blue));
-  }
-  
-  .hover\:bg-brand-dark-blue:hover {
-    background-color: hsl(var(--brand-dark-blue));
-  }
-  
-  .hover\:bg-brand-purple:hover {
-    background-color: hsl(var(--brand-purple));
-  }
-  
-  .hover\:bg-brand-gold:hover {
-    background-color: hsl(var(--brand-gold));
-  }
 
   /* Cookie.fun design system utilities */
 
