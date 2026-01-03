@@ -213,11 +213,12 @@ Based on PokedExplore design system.
     --input: 0 0% 100%;
     --ring: 43 95% 50%;
 
-    /* Neobrutalism Accent Colors */
-    --brand-yellow: 43 95% 50%; /* #F8AF06 - Yellow */
+    --radius: 0.75rem;
+
+    --brand-yellow: 43 95% 50%;
     --brand-purple: 290 35% 72%;
-    --brand-green: 150 80% 36%; /* #09A663 - Green */
-    --brand-beige: 48 100% 92%; /* #FBF4D8 - Beige */
+    --brand-green: 150 80% 36%;
+    --brand-beige: 48 100% 92%;
     --brand-black: 0 0% 0%; /* #000000 - Black */
     --brand-white: 0 0% 100%; /* #FFFFFF - White */
     
