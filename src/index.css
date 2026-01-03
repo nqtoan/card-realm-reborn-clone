@@ -358,12 +358,14 @@ Based on PokedExplore design system.
 
   /* Button primary style (PokedExplore) */
   .button-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6 py-3 rounded-md transition-colors inline-flex items-center justify-center gap-2;
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6 py-3 rounded-md transition-colors inline-flex items-center justify-center;
+    gap: 0.5rem; 
   }
-
+  
   .button-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 font-medium px-6 py-3 rounded-md transition-colors inline-flex items-center justify-center gap-2;
-  }
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 font-medium px-6 py-3 rounded-md transition-colors inline-flex items-center justify-center;
+    gap: 0.5rem;
+  }  
 
   /* Brand color utilities */
   .text-brand-blue {
