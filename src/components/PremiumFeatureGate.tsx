@@ -32,10 +32,10 @@ export const PremiumFeatureGate: React.FC<PremiumFeatureGateProps> = ({
       <div className="absolute inset-0 bg-gray-50/80 backdrop-blur-sm rounded-lg flex items-center justify-center z-10">
         <div className="text-center p-4 sm:p-6">
           <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-yellow-100 rounded-full mb-3 sm:mb-4">
-            <Crown className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-600" />
+            <Crown className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
           </div>
-          <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">{featureName}</h3>
-          <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 max-w-xs mx-auto">
+          <h3 className="font-semibold text-black mb-2 text-sm sm:text-base">{featureName}</h3>
+          <p className="text-xs sm:text-sm text-black/70 mb-3 sm:mb-4 max-w-xs mx-auto">
             {featureDescription}
           </p>
           <Button onClick={() => navigate('/premium')} size="sm" className="text-xs sm:text-sm">

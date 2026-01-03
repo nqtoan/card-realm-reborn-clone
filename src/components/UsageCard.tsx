@@ -43,7 +43,7 @@ export const UsageCard: React.FC<UsageCardProps> = ({
   return (
     <Card className={isPremium ? 'border-yellow-200 bg-gradient-to-br from-yellow-50 to-orange-50' : 'border-gray-200'}>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium">{t('dashboard.totalCards')}</CardTitle>
+        <CardTitle className="text-sm font-medium text-black">{t('dashboard.totalCards')}</CardTitle>
         <Badge variant={isPremium ? 'default' : 'secondary'} className={isPremium ? 'bg-yellow-600' : ''}>
           {isPremium ? <Crown className="w-3 h-3 mr-1" /> : <Zap className="w-3 h-3 mr-1" />}
           {planName}
@@ -52,24 +52,24 @@ export const UsageCard: React.FC<UsageCardProps> = ({
       <CardContent>
         {isPremium ? (
           <div>
-            <div className="text-2xl font-bold text-yellow-700">{totalCards}</div>
-            <p className="text-xs text-yellow-600">
+            <div className="text-2xl font-bold text-black">{totalCards}</div>
+            <p className="text-xs text-black/70">
               {t('premium.unlimitedCards')} ∞
             </p>
-            <div className="mt-2 text-xs text-gray-600">
+            <div className="mt-2 text-xs text-black/70">
               🎉 {t('premium.enjoyingFeatures')}
             </div>
           </div>
         ) : (
           <div>
-            <div className="text-2xl font-bold">{totalCards}/100</div>
-            <p className="text-xs text-muted-foreground">
+            <div className="text-2xl font-bold text-black">{totalCards}/100</div>
+            <p className="text-xs text-black/70">
               {cardsRemaining} {t('cards.title').toLowerCase()}
             </p>
             <Progress value={usagePercentage} className="mt-2" />
-            <div className="mt-2 text-xs text-gray-600">
+            <div className="mt-2 text-xs text-black/70">
               {usagePercentage >= 90 && (
-                <span className="text-orange-600 font-medium">
+                <span className="text-black font-medium">
                   ⚠️ {t('premium.readyToUpgrade')}
                 </span>
               )}
