@@ -1,4 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900;9..40,1000&family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,700;1,800;1,900&display=swap');
+/* Font Face Declarations - Soft Neobrutalism */
+@font-face {
+  font-family: 'Magox';
+  src: url('/magox.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/SF-Pro-Display/SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/SF-Pro-Display/SF-Pro-Display-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/SF-Pro-Display/SF-Pro-Display-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/SF-Pro-Display/SF-Pro-Display-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/SF-Pro-Display/SF-Pro-Display-Heavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/SF-Pro-Display/SF-Pro-Display-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -11,41 +66,49 @@ Based on PokedExplore design system.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Soft Neobrutalism Color System */
+    --background: 0 0% 0%; /* #000000 - Black background */
+    --foreground: 48 100% 92%; /* #FBF4D8 - Beige text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 48 100% 92%; /* #FBF4D8 - Beige card background */
+    --card-foreground: 0 0% 0%; /* #000000 - Black text on beige */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 48 100% 92%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 217 91% 60%; /* Bootstrap primary blue #0d6efd */
-    --primary-foreground: 0 0% 100%;
+    --primary: 43 95% 50%; /* #F8AF06 - Yellow accent */
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 210 11% 45%; /* Bootstrap secondary gray #6c757d */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 290 35% 72%; /* #CAACD2 - Purple accent */
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 210 17% 96%; /* Bootstrap gray-100 #f8f9fa */
-    --muted-foreground: 215 16% 47%;
+    --muted: 48 100% 92%;
+    --muted-foreground: 0 0% 0%;
 
-    --accent: 256 51% 51%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 150 80% 36%; /* #09A663 - Green accent */
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84% 60%; /* Bootstrap danger red #dc3545 */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%; /* Bootstrap gray-300 #dee2e6 */
-    --input: 214 32% 91%;
-    --ring: 217 91% 60%;
+    --border: 0 0% 100%; /* #FFFFFF - White border */
+    --input: 0 0% 100%;
+    --ring: 43 95% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Rounded corners for neobrutalism */
 
-    /* Bootstrap-inspired brand colors (PokedExplore style) */
-    --brand-blue: 217 91% 60%; /* #0d6efd */
-    --brand-dark-blue: 220 91% 23%; /* Keep existing for compatibility */
-    --brand-purple: 256 51% 51%;
-    --brand-gold: 44 97% 52%;
+    /* Neobrutalism Accent Colors */
+    --brand-yellow: 43 95% 50%; /* #F8AF06 - Yellow */
+    --brand-purple: 290 35% 72%; /* #CAACD2 - Purple */
+    --brand-green: 150 80% 36%; /* #09A663 - Green */
+    --brand-beige: 48 100% 92%; /* #FBF4D8 - Beige */
+    --brand-black: 0 0% 0%; /* #000000 - Black */
+    --brand-white: 0 0% 100%; /* #FFFFFF - White */
+    
+    /* Legacy compatibility */
+    --brand-blue: 217 91% 60%;
+    --brand-dark-blue: 220 91% 23%;
+    --brand-gold: 43 95% 50%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -107,7 +170,7 @@ Based on PokedExplore design system.
     --color-border-primary: 214 32% 91%;
     --color-border-secondary: 214 32% 95%;
     --color-border-tertiary: 214 32% 98%;
-    --color-border-primary-alpha: rgba(214, 32%, 91%, 0.5);
+    --color-border-primary-alpha: rgba(222, 228, 235, 0.5);
 
     /* Change indicators */
     --color-change-positive: 142 71% 45%;
@@ -121,33 +184,34 @@ Based on PokedExplore design system.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Soft Neobrutalism - Same as light theme (always black background) */
+    --background: 0 0% 0%; /* #000000 - Black background */
+    --foreground: 48 100% 92%; /* #FBF4D8 - Beige text */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 48 100% 92%; /* #FBF4D8 - Beige card background */
+    --card-foreground: 0 0% 0%; /* #000000 - Black text on beige */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 48 100% 92%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 43 95% 50%; /* #F8AF06 - Yellow accent */
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 210 11% 45%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 290 35% 72%; /* #CAACD2 - Purple accent */
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 217 32% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 48 100% 92%;
+    --muted-foreground: 0 0% 0%;
 
-    --accent: 256 51% 51%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 150 80% 36%; /* #09A663 - Green accent */
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 32% 18%;
-    --input: 217 32% 18%;
-    --ring: 212 27% 84%;
+    --border: 0 0% 100%; /* #FFFFFF - White border */
+    --input: 0 0% 100%;
+    --ring: 43 95% 50%;
 
     --brand-blue: 217 91% 60%;
     --brand-dark-blue: 220 91% 23%;
@@ -188,7 +252,7 @@ Based on PokedExplore design system.
     --color-border-primary: 217 32% 18%;
     --color-border-secondary: 240 3.7% 16%;
     --color-border-tertiary: 240 3.7% 12%;
-    --color-border-primary-alpha: rgba(217, 32%, 18%, 0.5);
+    --color-border-primary-alpha: rgba(30, 41, 59, 0.5);
 
     /* Change indicators (dark theme) */
     --color-change-positive: 142 71% 55%;
@@ -202,13 +266,42 @@ Based on PokedExplore design system.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    font-family: 'Inter', 'DM Sans', 'Montserrat', sans-serif;
+    @apply bg-background text-foreground;
+    background-color: #000000; /* Black background */
+    color: #FBF4D8; /* Beige text */
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
   }
 
+  /* Neobrutalism Typography */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', 'DM Sans', 'Montserrat', sans-serif;
+    font-family: 'Magox', 'SF Pro Display', sans-serif;
     font-weight: 700;
+    color: #FBF4D8; /* Beige text */
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  h4, h5, h6 {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  /* Body text uses SF Pro Display */
+  p, span, div, a, button, input, textarea, select, label, li {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #FBF4D8;
   }
 }
 
@@ -483,5 +576,123 @@ Based on PokedExplore design system.
   /* Tracking utilities */
   .tracking-small {
     letter-spacing: -0.01em;
+  }
+
+  /* ========================================
+     SOFT NEOBRUTALISM UTILITY CLASSES
+     ======================================== */
+
+  /* Neobrutalism Card Style */
+  .card-neo {
+    background-color: #FBF4D8; /* Beige */
+    border: 2px solid #FFFFFF; /* White stroke */
+    border-radius: 0.75rem;
+    box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .card-neo:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 0.4);
+  }
+
+  /* Neobrutalism Button Styles */
+  .button-neo {
+    background-color: #F8AF06; /* Yellow default */
+    border: 2px solid #FFFFFF;
+    border-radius: 0.75rem;
+    color: #000000;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.1s ease;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 0.3);
+  }
+
+  .button-neo:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 0.4);
+  }
+
+  .button-neo:active {
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 0.3);
+  }
+
+  .button-neo-purple {
+    background-color: #CAACD2;
+  }
+
+  .button-neo-green {
+    background-color: #09A663;
+  }
+
+  /* Neobrutalism Input Style */
+  .input-neo {
+    background-color: #FBF4D8; /* Beige */
+    border: 2px solid #FFFFFF;
+    border-radius: 0.75rem;
+    color: #000000;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+  }
+
+  .input-neo:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(248, 175, 6, 0.3), 4px 4px 0px 0px rgba(255, 255, 255, 0.3);
+  }
+
+  .input-neo::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Neobrutalism Text Colors */
+  .text-neo-beige {
+    color: #FBF4D8;
+  }
+
+  .text-neo-black {
+    color: #000000;
+  }
+
+  .text-neo-yellow {
+    color: #F8AF06;
+  }
+
+  .text-neo-purple {
+    color: #CAACD2;
+  }
+
+  .text-neo-green {
+    color: #09A663;
+  }
+
+  /* Neobrutalism Background Colors */
+  .bg-neo-black {
+    background-color: #000000;
+  }
+
+  .bg-neo-beige {
+    background-color: #FBF4D8;
+  }
+
+  .bg-neo-yellow {
+    background-color: #F8AF06;
+  }
+
+  .bg-neo-purple {
+    background-color: #CAACD2;
+  }
+
+  .bg-neo-green {
+    background-color: #09A663;
+  }
+
+  /* Neobrutalism Border */
+  .border-neo-white {
+    border: 2px solid #FFFFFF;
   }
 }

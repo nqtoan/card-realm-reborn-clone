@@ -20,11 +20,24 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'DM Sans', 'Montserrat', 'sans-serif'],
-				inter: ['Inter', 'sans-serif'],
-				'dm-sans': ['DM Sans', 'sans-serif'],
-				montserrat: ['Montserrat', 'sans-serif'],
+				sans: ['SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+				magox: ['Magox', 'SF Pro Display', 'sans-serif'],
+				'sf-pro': ['SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+				// Legacy fonts for compatibility
+				inter: ['SF Pro Display', 'sans-serif'],
+				'dm-sans': ['SF Pro Display', 'sans-serif'],
+				montserrat: ['SF Pro Display', 'sans-serif'],
 			},
+			colors: {
+				// Neobrutalism colors
+				'neo': {
+					black: '#000000',
+					beige: '#FBF4D8',
+					yellow: '#F8AF06',
+					purple: '#CAACD2',
+					green: '#09A663',
+					white: '#FFFFFF',
+				},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
