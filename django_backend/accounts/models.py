@@ -6,6 +6,12 @@ def user_profile_picture_path(instance, filename):
     return f'profile_pictures/user_{instance.id}/{filename}'
 
 class User(AbstractUser):
+    # Login provider choices
+    LOGIN_PROVIDER_CHOICES = [
+        ('password', 'Password'),
+        ('privy', 'Privy'),
+    ]
+    
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -14,6 +20,15 @@ class User(AbstractUser):
         null=True,
         blank=True,
         default=None
+    )
+    
+    # Privy authentication fields
+    privy_id = models.CharField(max_length=255, unique=True, null=True, blank=True)
+    wallet_address = models.CharField(max_length=255, null=True, blank=True)
+    login_provider = models.CharField(
+        max_length=20,
+        choices=LOGIN_PROVIDER_CHOICES,
+        default='password'
     )
     
     # Add custom related_name to avoid clashes

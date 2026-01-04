@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { PrivyProvider } from '@privy-io/react-auth';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/Header';
@@ -36,14 +37,26 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+  const privyAppId = import.meta.env.VITE_PRIVY_APP_ID;
+  
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <AuthProvider>
-          <div className="min-h-screen bg-neo-black">
-            <Header />
-            <main>
-              <Routes>
+      <PrivyProvider
+        appId={privyAppId || ''}
+        config={{
+          loginMethods: ['wallet', 'email', 'sms'],
+          appearance: {
+            theme: 'dark',
+            accentColor: '#6366f1',
+          },
+        }}
+      >
+        <Router>
+          <AuthProvider>
+            <div className="min-h-screen bg-neo-black">
+              <Header />
+              <main>
+                <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
@@ -107,12 +120,13 @@ function App() {
                 <Route path="/dashboard/shared/:userId" element={<SharedDashboard />} />
 
                 <Route path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <Toaster />
-          </div>
-        </AuthProvider>
-      </Router>
+                </Routes>
+              </main>
+              <Toaster />
+            </div>
+          </AuthProvider>
+        </Router>
+      </PrivyProvider>
     </QueryClientProvider>
   );
 }

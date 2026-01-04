@@ -103,6 +103,10 @@ STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY', default='')
 STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY', default='')
 STRIPE_WEBHOOK_SECRET = config('STRIPE_WEBHOOK_SECRET', default='')
 
+# Privy settings
+PRIVY_APP_ID = config('PRIVY_APP_ID', default='')
+PRIVY_APP_SECRET = config('PRIVY_APP_SECRET', default='')
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True

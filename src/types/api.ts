@@ -140,6 +140,7 @@ export interface User {
   last_name: string;
   date_joined: string;
   profile_picture?: string | null;
+  wallet_address?: string | null;
 }
 
 export interface Collection {

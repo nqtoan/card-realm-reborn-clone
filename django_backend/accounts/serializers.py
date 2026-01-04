@@ -6,9 +6,11 @@ from accounts.models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
+    wallet_address = serializers.CharField(read_only=True, allow_null=True)
+    
     class Meta:
         model = User
-        fields = ('id', 'email', 'first_name', 'last_name', 'date_joined')
+        fields = ('id', 'email', 'first_name', 'last_name', 'date_joined', 'wallet_address')
 
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField()

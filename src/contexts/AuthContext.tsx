@@ -7,6 +7,7 @@ interface AuthContextType {
   user: User | null;
   token: string | null;
   login: (email: string, password: string) => Promise<boolean>;
+  privyLogin: (privyAccessToken: string) => Promise<boolean>;
   register: (userData: {
     first_name: string;
     last_name: string;
@@ -68,6 +69,22 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
+  const privyLogin = async (privyAccessToken: string): Promise<boolean> => {
+    try {
+      const response = await backendApi.privyLogin(privyAccessToken);
+      if (response.token && response.user) {
+        setToken(response.token);
+        setUser(response.user);
+        localStorage.setItem('token', response.token);
+        return true;
+      }
+      return false;
+    } catch (error) {
+      console.error('Privy login error:', error);
+      return false;
+    }
+  };
+
   const register = async (userData: {
     first_name: string;
     last_name: string;
@@ -94,6 +111,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     user,
     token,
     login,
+    privyLogin,
     register,
     logout,
     updateUser,

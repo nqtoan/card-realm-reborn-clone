@@ -318,6 +318,21 @@ export const backendApi = {
     return response.json();
   },
 
+  async privyLogin(privyAccessToken: string) {
+    const response = await fetch(`${API_BASE_URL}/auth/privy-login/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${privyAccessToken}`,
+      },
+    });
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error || 'Privy login failed');
+    }
+    return response.json();
+  },
+
   async register(userData: {
     first_name: string;
     last_name: string;
