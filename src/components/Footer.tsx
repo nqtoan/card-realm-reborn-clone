@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 const Footer = () => {
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
-  const contractAddress = 'SOON';
+  const contractAddress = '3MUjjYipARdMFNWxcJAdT1k7kBEqvu3Anqszko6gpump';
 
   const handleCopyAddress = async () => {
     try {
@@ -33,7 +33,7 @@ const Footer = () => {
     },
     {
       name: 'X/Twitter',
-      url: 'https://twitter.com',
+      url: 'https://x.com/pokellectorfun',
     },
     {
       name: 'Discord',
@@ -63,7 +63,7 @@ const Footer = () => {
             
             {/* Contract Address */}
             <div className="flex items-center gap-2 mt-2">
-              <span className="text-sm sm:text-base text-[#FBF4D8]/70">CA:</span>
+              <span className="text-sm sm:text-base text-[#FBF4D8]/70">CA</span>
               <button
                 onClick={handleCopyAddress}
                 className={cn(
