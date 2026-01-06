@@ -8,7 +8,6 @@ import { Search, Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import UserMenu from './UserMenu';
 import LanguageSelector from './LanguageSelector';
-import logo from '@/assets/images/logo.png';
 
 const Header = () => {
   const { isAuthenticated } = useAuth();
@@ -31,7 +30,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <div className="text-2xl font-bold text-primary">
-              <img src={logo} alt="Logo" className="w-16 h-16" />
+              <img src="/tn-pokellector.webp" alt="Pokellector" className="w-16 h-16" />
             </div>
           </Link>
 

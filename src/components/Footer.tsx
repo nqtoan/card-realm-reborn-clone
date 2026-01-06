@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Twitter, MessageCircle, Send, Copy, Check } from 'lucide-react';
+import { Copy, Check } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 
@@ -29,22 +29,18 @@ const Footer = () => {
   const socialLinks = [
     {
       name: 'GitHub',
-      icon: Github,
       url: 'https://github.com',
     },
     {
       name: 'X/Twitter',
-      icon: Twitter,
       url: 'https://twitter.com',
     },
     {
       name: 'Discord',
-      icon: MessageCircle,
       url: 'https://discord.com',
     },
     {
       name: 'Telegram',
-      icon: Send,
       url: 'https://telegram.org',
     },
   ];
@@ -57,7 +53,7 @@ const Footer = () => {
           <div className="flex flex-col items-center lg:items-start gap-4 flex-1">
             {/* Project Title */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FBF4D8] font-magox">
-              Card Realm Reborn
+              Pokellector
             </h2>
             
             {/* Tagline */}
@@ -91,30 +87,27 @@ const Footer = () => {
           </div>
 
           {/* RIGHT SECTION - Social Links */}
-          <div className="flex items-center gap-4 sm:gap-6 lg:gap-8">
-            {socialLinks.map((social) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "flex items-center justify-center",
-                    "w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16",
-                    "text-[#FBF4D8] border-2 border-[#FBF4D8] rounded-lg",
-                    "hover:bg-[#FBF4D8] hover:text-neo-black",
-                    "hover:border-neo-yellow hover:scale-110",
-                    "transition-all duration-200",
-                    "active:scale-95"
-                  )}
-                  aria-label={social.name}
-                >
-                  <Icon className="h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7" />
-                </a>
-              );
-            })}
+          <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "px-4 py-2 sm:px-5 sm:py-2.5 lg:px-6 lg:py-3",
+                  "text-sm sm:text-base lg:text-lg font-semibold",
+                  "text-[#FBF4D8] border-2 border-[#FBF4D8] rounded-lg",
+                  "hover:bg-[#FBF4D8] hover:text-neo-black",
+                  "hover:border-neo-yellow hover:scale-105",
+                  "transition-all duration-200",
+                  "active:scale-95"
+                )}
+                aria-label={social.name}
+              >
+                {social.name}
+              </a>
+            ))}
           </div>
         </div>
       </div>
